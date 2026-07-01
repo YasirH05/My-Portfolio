@@ -4,6 +4,7 @@ import { ArrowLeft, Sun, Moon, ExternalLink, CheckCircle } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaBrain, FaDatabase, FaChartLine, FaJava, FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaFigma, FaAws, FaDocker, FaUserGraduate, FaCode, FaCompass, FaCamera, FaEnvelope } from 'react-icons/fa';
 import { SiPython, SiPandas, SiNumpy, SiScikitlearn, SiJavascript, SiTailwindcss, SiExpress, SiMongodb, SiNextdotjs } from 'react-icons/si';
 import { VscCode } from 'react-icons/vsc';
+import Logo from '../components/Logo';
 import './TechPortfolio.css';
 
 const skillsData = {
@@ -147,7 +148,7 @@ export default function TechPortfolio() {
         <div className="nav-brand">
            <RouterLink to="/" className="back-link"><ArrowLeft size={18} /> Gateway</RouterLink>
            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', borderLeft: '1px solid var(--border-color)', paddingLeft: '1.5rem' }}>
-              <img src="/yh-logo.svg" alt="Yasir Hasan Logo" style={{ width: '28px', height: '28px' }} />
+              <Logo size={28} />
               <span className="brand-logo" style={{ borderLeft: 'none', paddingLeft: '0' }}>Yasir Hasan</span>
            </div>
         </div>
@@ -530,7 +531,7 @@ export default function TechPortfolio() {
         <div className="footer-top">
            <div className="footer-col brand-col">
               <div className="footer-brand">
-                 <img src="/yh-logo.svg" alt="Yasir Hasan Logo" style={{ width: '32px', height: '32px' }} />
+                 <Logo size={32} />
                  <span className="footer-name" style={{ fontSize: '1.5rem' }}>Yasir Hasan</span>
               </div>
               <p className="footer-bio">

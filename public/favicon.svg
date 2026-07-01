@@ -7,8 +7,13 @@
   </defs>
 
   <style>
-    .h-letter { fill: var(--text-heading, #fff); }
-    .y-cutout { stroke: var(--bg-color, #0F1720); }
+    .h-letter { fill: #fff; }
+    .y-cutout { stroke: #0F1720; }
+    
+    @media (prefers-color-scheme: light) {
+      .h-letter { fill: #0f172a; }
+      .y-cutout { stroke: #f8fafc; }
+    }
   </style>
 
   <!-- H Letter -->
