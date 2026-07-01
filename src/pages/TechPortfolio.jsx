@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { ArrowLeft, Sun, Moon, ExternalLink, CheckCircle } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaBrain, FaDatabase, FaChartLine, FaJava, FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaFigma, FaAws, FaDocker, FaUserGraduate, FaCode, FaCompass, FaCamera, FaEnvelope } from 'react-icons/fa';

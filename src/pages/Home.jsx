@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Code2, Video, MapPin, Mail, Phone } from 'lucide-react';
 import './Home.css';
