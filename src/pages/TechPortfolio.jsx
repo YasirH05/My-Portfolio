@@ -146,7 +146,10 @@ export default function TechPortfolio() {
       <nav className="tech-nav">
         <div className="nav-brand">
            <RouterLink to="/" className="back-link"><ArrowLeft size={18} /> Gateway</RouterLink>
-           <span className="brand-logo">Tech Portfolio</span>
+           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', borderLeft: '1px solid var(--border-color)', paddingLeft: '1.5rem' }}>
+              <img src="/yh-logo.svg" alt="Yasir Hasan Logo" style={{ width: '28px', height: '28px' }} />
+              <span className="brand-logo" style={{ borderLeft: 'none', paddingLeft: '0' }}>Yasir Hasan</span>
+           </div>
         </div>
         <div className="nav-links-center">
            <a href="#about">About</a>
@@ -527,6 +530,7 @@ export default function TechPortfolio() {
         <div className="footer-top">
            <div className="footer-col brand-col">
               <div className="footer-brand">
+                 <img src="/yh-logo.svg" alt="Yasir Hasan Logo" style={{ width: '32px', height: '32px' }} />
                  <span className="footer-name" style={{ fontSize: '1.5rem' }}>Yasir Hasan</span>
               </div>
               <p className="footer-bio">
