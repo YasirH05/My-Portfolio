@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+:root {
+  /* Dark Theme (Default) */
+  --bg-color: #0F1720;
+  --bg-surface: #1C2430;
+  --bg-section: #273240;
+  --text-heading: #F8FAFC;
+  --text-body: #CBD5E1;
+  --accent-primary: #34D399;
+  --accent-hover: #10B981;
+  --border-color: #334155;
+}
+
+[data-theme="light"] {
+  /* Light Theme */
+  --bg-color: #FDFBF7;
+  --bg-surface: #F8F5EE;
+  --bg-section: #F1EFE7;
+  --text-heading: #111827;
+  --text-body: #4B5563;
+  --accent-primary: #059669;
+  --accent-hover: #047857;
+  --border-color: #E8E4DB;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,13 +34,16 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-body);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* Ensure images and videos are responsive */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-heading);
+}
+
 img, video {
   max-width: 100%;
   height: auto;
