@@ -163,3 +163,34 @@
   background: white;
   color: black;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+  }
+  .center-identity {
+    top: 5%;
+  }
+  .center-identity h1 {
+    font-size: 3.5rem;
+  }
+  .center-identity .subtitle {
+    font-size: 1rem;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .split-panel {
+    padding-bottom: 2rem;
+  }
+  .content h2 {
+    font-size: 2rem;
+  }
+  .content p {
+    font-size: 0.95rem;
+  }
+}
