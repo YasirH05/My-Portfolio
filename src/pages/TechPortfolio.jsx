@@ -31,13 +31,15 @@ const skillsData = {
 };
 
 const blueprintData = {
-  "Who I Am": {
-    id: "Who I Am",
-    title: "WHO I AM",
+  "Education": {
+    id: "Education",
+    title: "EDUCATION",
     items: [
-      { label: "Degree", value: "Computer Science (AI & ML)" },
+      { label: "Degree", value: "Bachelor of Technology (B.Tech) in Computer Science and Engineering (AI & ML)" },
       { label: "Institution", value: "ABES Engineering College" },
-      { label: "Status", value: "4th Year Student" }
+      { label: "Status", value: "4th Year Student" },
+      { label: "12th (ISC)", value: "St. Fidelis College — 91.5%" },
+      { label: "10th (ICSE)", value: "St. Fidelis College — 95.8%" }
     ]
   },
   "Currently Building": {
@@ -85,11 +87,11 @@ export default function TechPortfolio() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const [formStatus, setFormStatus] = useState('');
   const [activeSkill, setActiveSkill] = useState(skillsData['React']);
-  const [activeBlueprint, setActiveBlueprint] = useState(blueprintData['Who I Am']);
+  const [activeBlueprint, setActiveBlueprint] = useState(blueprintData['Education']);
 
   const getBlueprintIcon = (id) => {
     switch (id) {
-       case 'Who I Am': return <FaUserGraduate />;
+       case 'Education': return <FaUserGraduate />;
        case 'Currently Building': return <FaCode />;
        case 'Interests': return <FaBrain />;
        case 'Core Principles': return <FaCompass />;
