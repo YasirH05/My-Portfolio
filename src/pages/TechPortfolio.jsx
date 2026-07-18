@@ -173,6 +173,11 @@ export default function TechPortfolio() {
         {/* HERO SECTION */}
         <section id="hero" className="section-block hero-minimal">
           <div className="hero-minimal-content">
+             <a href="https://railcompass.vercel.app/" target="_blank" rel="noreferrer" className="subtle-project-link">
+                <span className="subtle-badge">New</span>
+                <span className="subtle-text">RailCompass</span>
+                <span className="subtle-icon">↗</span>
+             </a>
              <h1 className="hero-massive-heading">
                 I build thoughtful software with <span className="hero-highlight">curiosity, logic and purpose</span>.
              </h1>
