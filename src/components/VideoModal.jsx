@@ -1,6 +1,20 @@
 import { useEffect } from 'react';
-import { X, Clapperboard } from 'lucide-react';
+import { X, Clapperboard, ExternalLink } from 'lucide-react';
+import { FaInstagram } from 'react-icons/fa';
 import './VideoModal.css';
+
+const instagramProfiles = [
+  {
+    platform: 'Instagram',
+    handle: '@unpopulareditsss',
+    url: 'https://www.instagram.com/unpopulareditsss/'
+  },
+  {
+    platform: 'Instagram',
+    handle: '@shutter.scroll',
+    url: 'https://www.instagram.com/shutter.scroll/'
+  }
+];
 
 export default function VideoModal({ isOpen, onClose }) {
   useEffect(() => {
@@ -62,20 +76,36 @@ export default function VideoModal({ isOpen, onClose }) {
             I've been working on video editing alongside development, and I'll eventually put together a dedicated space for it here.
           </p>
 
+          <div className="video-modal-socials-section">
+            <p className="video-modal-socials-label">
+              Until then, you can explore some of my edits here:
+            </p>
+            <div className="video-modal-links-grid">
+              {instagramProfiles.map((profile) => (
+                <a 
+                  key={profile.handle}
+                  href={profile.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="video-social-card"
+                >
+                  <div className="video-social-icon-wrapper">
+                    <FaInstagram size={20} />
+                  </div>
+                  <div className="video-social-info">
+                    <span className="video-social-platform">{profile.platform}</span>
+                    <span className="video-social-handle">{profile.handle}</span>
+                  </div>
+                  <ExternalLink size={16} className="video-social-external-icon" />
+                </a>
+              ))}
+            </div>
+          </div>
+
           <div className="video-modal-rendering-status">
             <span className="rendering-pulse-indicator" />
             <span className="rendering-status-text">The edit is still rendering.</span>
           </div>
-        </div>
-
-        <div className="video-modal-footer">
-          <button 
-            type="button" 
-            className="btn-primary-hero video-modal-action-btn" 
-            onClick={onClose}
-          >
-            Back to Portfolio
-          </button>
         </div>
       </div>
     </div>

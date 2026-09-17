@@ -17,6 +17,8 @@
   position: relative;
   width: 100%;
   max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: 20px;
@@ -86,7 +88,7 @@
 .video-modal-body {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .video-modal-lead {
@@ -102,6 +104,113 @@
   line-height: 1.6;
 }
 
+/* Instagram Editing Profiles Section */
+.video-modal-socials-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.video-modal-socials-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.video-modal-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.video-social-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-section);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-heading);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-social-card:hover {
+  border-color: var(--accent-primary);
+  background-color: rgba(52, 211, 153, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .video-social-card:hover {
+  background-color: rgba(5, 150, 105, 0.08);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.08);
+}
+
+.video-social-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+[data-theme="light"] .video-social-icon-wrapper {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.video-social-card:hover .video-social-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.video-social-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.video-social-platform {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  color: var(--text-body);
+  opacity: 0.85;
+}
+
+.video-social-handle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-social-external-icon {
+  color: var(--text-body);
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.video-social-card:hover .video-social-external-icon {
+  color: var(--accent-primary);
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+/* Rendering Status Line */
 .video-modal-rendering-status {
   display: inline-flex;
   align-items: center;
@@ -110,7 +219,7 @@
   border: 1px solid var(--border-color);
   padding: 0.65rem 1rem;
   border-radius: 12px;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .rendering-pulse-indicator {
@@ -128,21 +237,6 @@
   font-weight: 500;
   color: var(--text-body);
   font-style: italic;
-}
-
-.video-modal-footer {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.video-modal-action-btn {
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
 }
 
 @keyframes modalOverlayFadeIn {
@@ -190,5 +284,8 @@
   }
   .video-modal-lead {
     font-size: 1.05rem;
+  }
+  .video-social-card {
+    padding: 0.75rem 0.85rem;
   }
 }
