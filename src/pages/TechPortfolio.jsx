@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { ArrowLeft, Sun, Moon, ExternalLink, CheckCircle } from 'lucide-react';
+import { Sun, Moon, ExternalLink, CheckCircle, Menu, X } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaBrain, FaDatabase, FaChartLine, FaJava, FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaFigma, FaAws, FaDocker, FaUserGraduate, FaCode, FaCompass, FaCamera, FaEnvelope } from 'react-icons/fa';
 import { SiPython, SiPandas, SiNumpy, SiScikitlearn, SiJavascript, SiTailwindcss, SiExpress, SiMongodb, SiNextdotjs } from 'react-icons/si';
 import { VscCode } from 'react-icons/vsc';
 import Logo from '../components/Logo';
+import VideoModal from '../components/VideoModal';
 import './TechPortfolio.css';
 
 const skillsData = {
@@ -88,6 +88,8 @@ export default function TechPortfolio() {
   const [formStatus, setFormStatus] = useState('');
   const [activeSkill, setActiveSkill] = useState(skillsData['React']);
   const [activeBlueprint, setActiveBlueprint] = useState(blueprintData['Education']);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const getBlueprintIcon = (id) => {
     switch (id) {
@@ -148,25 +150,58 @@ export default function TechPortfolio() {
       {/* Navigation */}
       <nav className="tech-nav">
         <div className="nav-brand">
-           <RouterLink to="/" className="back-link"><ArrowLeft size={18} /> Gateway</RouterLink>
-           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', borderLeft: '1px solid var(--border-color)', paddingLeft: '1.5rem' }}>
-              <Logo size={28} />
-              <span className="brand-logo" style={{ borderLeft: 'none', paddingLeft: '0' }}>Yasir Hasan</span>
-           </div>
+          <Logo size={28} />
+          <span className="brand-logo">Yasir Hasan</span>
         </div>
         <div className="nav-links-center">
-           <a href="#about">About</a>
-           <a href="#projects">Projects</a>
-           <a href="#experience">Experience</a>
-           <a href="#skills">Skills</a>
-           <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <button 
+            type="button" 
+            className="nav-link-btn" 
+            onClick={() => setIsVideoModalOpen(true)}
+          >
+            Video Editing
+          </button>
+          <a href="#contact">Contact</a>
         </div>
         <div className="nav-actions">
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle Theme">
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
+          <button 
+            type="button"
+            onClick={() => setIsMobileMenuOpen(prev => !prev)} 
+            className="mobile-menu-toggle" 
+            aria-label="Toggle Navigation Menu"
+          >
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Navigation Drawer */}
+      {isMobileMenuOpen && (
+        <div className="mobile-nav-drawer">
+          <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+          <a href="#projects" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+          <a href="#experience" onClick={() => setIsMobileMenuOpen(false)}>Experience</a>
+          <a href="#skills" onClick={() => setIsMobileMenuOpen(false)}>Skills</a>
+          <button 
+            type="button" 
+            className="mobile-nav-btn" 
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setIsVideoModalOpen(true);
+            }}
+          >
+            Video Editing
+          </button>
+          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+        </div>
+      )}
 
       <main className="tech-main-content">
         
@@ -557,6 +592,13 @@ export default function TechPortfolio() {
                  <a href="#skills">Skills</a>
                  <a href="#projects">Projects</a>
                  <a href="#experience">Experience</a>
+                 <button 
+                   type="button" 
+                   className="footer-nav-btn" 
+                   onClick={() => setIsVideoModalOpen(true)}
+                 >
+                   Video Editing
+                 </button>
                  <a href="#contact">Contact</a>
               </div>
            </div>
@@ -576,6 +618,12 @@ export default function TechPortfolio() {
            <p>© 2026 Yasir Hasan. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Video Editing Coming Soon Modal */}
+      <VideoModal 
+        isOpen={isVideoModalOpen} 
+        onClose={() => setIsVideoModalOpen(false)} 
+      />
     </div>
   );
 }
